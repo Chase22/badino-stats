@@ -1,0 +1,25 @@
+{
+  "return_code": "success",
+  "data": [
+    {
+      "location_id": 2,
+      "location_name": "Badino Overath",
+      "customer_amount": 21,
+      "customer_amount_max": 245,
+      "area_list": [
+        {
+          "area_id": 1,
+          "area_name": "Sauna",
+          "customer_amount": 3,
+          "customer_amount_max": 25
+        },
+        {
+          "area_id": 4,
+          "area_name": "Hallenbad",
+          "customer_amount": 18,
+          "customer_amount_max": 220
+        }
+      ]
+    }
+  ]
+}

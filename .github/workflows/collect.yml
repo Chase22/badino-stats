@@ -1,0 +1,25 @@
+name: Collect Stats
+on:
+  workflow_dispatch: { }
+
+jobs:
+  collectStats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+
+      - name: collect stats
+        run: ./get-info.sh
+
+      - name: extract stats
+        run: ./extract-stats.sh
+
+      - name: push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stats.csv
+          git commit -m "Update stats.csv [$(date -u '+%Y-%m-%d %H:%M:%S UTC')]"
+          git push
+
