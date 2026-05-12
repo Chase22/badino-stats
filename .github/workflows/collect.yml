@@ -1,9 +1,15 @@
 name: Collect Stats
 on:
   workflow_dispatch: { }
+  schedule:
+    # Runs every 30 minutes from 6 to 22 Tue-Sun (Opening Times)
+    - cron: "*/30 6-22 * * 0,2-6"
+      timezone: "Europe/Berlin"
 
 jobs:
   collectStats:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: checkout
