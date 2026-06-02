@@ -21,6 +21,9 @@ jobs:
       - name: extract stats
         run: ./extract-stats.sh
 
+      - name: delete stats.json
+        run: rm -f stats.json
+
       - name: push
         run: |
           git config user.name "github-actions[bot]"
